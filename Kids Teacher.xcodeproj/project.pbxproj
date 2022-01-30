@@ -118,7 +118,6 @@
 				B07D504E24C6A0F100BDA194 /* AppDelegate.swift */,
 				B07D505024C6A0F100BDA194 /* SceneDelegate.swift */,
 				B07D508E24C81D4800BDA194 /* ViewController */,
-				B07D508F24C81D5700BDA194 /* Model */,
 				B07D509024C81E0F00BDA194 /* Extension */,
 				B07D505424C6A0F100BDA194 /* Main.storyboard */,
 				B07D505C24C6A0F700BDA194 /* LaunchScreen.storyboard */,
@@ -159,13 +158,6 @@
 				B07D509324C845A100BDA194 /* SplashScreen */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		B07D508F24C81D5700BDA194 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		B07D509024C81E0F00BDA194 /* Extension */ = {
