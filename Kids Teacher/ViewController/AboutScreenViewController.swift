@@ -11,6 +11,7 @@ import UIKit
 class AboutScreenViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var myImage: UIImageView!
+    @IBOutlet weak var appVersionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,10 @@ class AboutScreenViewController: UIViewController {
     func setUI(){
         backButton.addSoftUIEffectForButton()
         myImage.layer.cornerRadius = myImage.bounds.width / 2
+        
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            appVersionLabel.text = "App Version: \(version)"
+        }
     }
     
     //for gradient Color
