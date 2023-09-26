@@ -1,19 +1,24 @@
-name: Swift
+# This workflow will build a Swift project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+
+name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ master ]
+    branches: [ "main" ]
 
 jobs:
-  build:
+  build-and-test:
 
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+    - uses: actions/checkout@v2
+
+    - name: Select Xcode
+      run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+    - name: Build and test
+      run: xcodebuild -project SmartDictionary.xcodeproj -scheme SmartDictionary -destination 'platform=iOS Simulator,OS=16.4,name=iPhone 14' clean test | xcpretty
